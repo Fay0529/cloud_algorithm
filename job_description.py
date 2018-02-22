@@ -1,5 +1,10 @@
 # -*- coding: UTF-8 -*-
 
+###
+_author_='钱昊达'
+计算职位需求中出现的中文词汇的权重，析出英文词汇并过滤(剩余几乎都是it术语)
+采用算法是TextRank
+###
 import jieba
 import jieba.analyse
 import pymysql
