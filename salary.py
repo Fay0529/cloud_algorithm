@@ -2,17 +2,17 @@
 
 ###
 _author_='钱昊达'
-预处理salary字段
+预处理salary字段,析出salary_low和salary_high
 ###
 
 import pymysql
 import re
 
-db=pymysql.connect(host='47.100.163.219',
-                    user='root',
-                    password='Cloud12345',
-                    db='cloud',
-                    charset='utf8mb4')
+db=pymysql.connect(host='***',
+                    user='***',
+                    password='***',
+                    db='***',
+                    charset='***')
 
 
 cursor=db.cursor()
