@@ -5,6 +5,10 @@
 # Modified 		:
 # Version 		: 	1.0
 
+
+"""
+利用textrank算法实现公司词云的关键词抽取
+"""
 import jieba
 import jieba.analyse
 import pandas as pd

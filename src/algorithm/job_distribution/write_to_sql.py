@@ -5,6 +5,9 @@
 # Modified 		:
 # Version 		: 	1.0
 
+"""
+将mapreduce的结果写入mysql
+"""
 import pandas as pd
 import pymysql
 #连接数据库

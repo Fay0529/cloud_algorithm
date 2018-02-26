@@ -4,6 +4,10 @@
 # Created 		: 	24 February 2018
 # Modified 		:
 # Version 		: 	1.0
+"""
+将tsv转化为txt格式
+"""
+
 import pandas as pd
 # 加载文件函数
 def loadData(path):

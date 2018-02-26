@@ -4,6 +4,10 @@
 # Created 		: 	25 February 2018
 # Modified 		:
 # Version 		: 	1.0
+"""
+对分词结果利用word2vec进行训练
+"""
+
 import multiprocessing
 from gensim.models import Word2Vec
 from gensim.models.word2vec import LineSentence

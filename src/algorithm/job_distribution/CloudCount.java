@@ -5,6 +5,10 @@ Created 		: 	25 February 2018
 Modified 		:
 Version 		: 	1.0
 ****/
+/*
+统计职位城市的分布信息
+*/
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;

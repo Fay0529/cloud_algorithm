@@ -4,6 +4,9 @@
 # Created 		: 	24 February 2018
 # Modified 		:
 # Version 		: 	1.0
+"""
+对训练模型word2vec进行简单测试
+"""
 from gensim.models import Word2Vec
 
 import jieba

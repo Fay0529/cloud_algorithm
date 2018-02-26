@@ -4,6 +4,10 @@
 # Created 		: 	25 February 2018
 # Modified 		:
 # Version 		: 	1.0
+"""
+利用jieba对job_name进行分词
+"""
+
 import jieba
 import jieba.analyse
 import pandas as pd

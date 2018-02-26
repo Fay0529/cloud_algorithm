@@ -4,6 +4,10 @@
 # Created 		: 	25 February 2018
 # Modified 		:
 # Version 		: 	1.0
+
+"""
+利用正则表达式对job_experience字段进行处理
+"""
 import pandas as pd
 import numpy as np
 import pymysql

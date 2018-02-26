@@ -45,4 +45,3 @@ except Exception as err:
 
 db.close()
 print("Connection closed")
-
