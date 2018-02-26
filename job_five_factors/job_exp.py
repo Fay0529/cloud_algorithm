@@ -27,9 +27,9 @@ cursor=db.cursor()
 
 # 加载文件函数
 def loadData(path):
-    df=pd.read_csv(path,sep='\t')
+    df=pd.read_csv(path,sep='\t',header=None)
     return df
-df=loadData('/home/fay/workspace/python/select_job_id_job_experience_from_job2_0.tsv')
+df=loadData('./select_job_id_job_experience_from_job2_0.tsv')
 df.columns = ['job_id', 'exp']
 # dfTest=df.head(10);
 dfTest=df
