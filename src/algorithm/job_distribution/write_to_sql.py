@@ -1,5 +1,10 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8*-
+# Author 		: 	陈小飞
+# Created 		: 	26 February 2018
+# Modified 		:
+# Version 		: 	1.0
+
 import pandas as pd
 import pymysql
 #连接数据库

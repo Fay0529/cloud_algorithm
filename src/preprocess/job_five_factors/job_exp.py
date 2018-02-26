@@ -1,5 +1,9 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8*-
+# Author 		: 	陈小飞
+# Created 		: 	25 February 2018
+# Modified 		:
+# Version 		: 	1.0
 import pandas as pd
 import numpy as np
 import pymysql

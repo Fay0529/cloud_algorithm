@@ -1,5 +1,9 @@
 # -*- coding: UTF-8 -*-
 
+# Author 		: 	陈小飞
+# Created 		: 	25 February 2018
+# Modified 		:
+# Version 		: 	1.0
 import jieba
 import jieba.analyse
 import pandas as pd

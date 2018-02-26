@@ -1,5 +1,9 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8*-
+# Author 		: 	陈小飞
+# Created 		: 	24 February 2018
+# Modified 		:
+# Version 		: 	1.0
 from gensim.models import Word2Vec
 
 import jieba
