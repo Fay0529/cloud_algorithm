@@ -2,8 +2,8 @@
 
 # Author 		: 	钱昊达
 # Created 		: 	16 February 2018
-# Modified 		: 	
-# Version 		: 	1.0
+# Modified 		: 	20 February 2018
+# Version 		: 	1.1
 
 """
 
