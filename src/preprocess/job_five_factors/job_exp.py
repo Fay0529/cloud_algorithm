@@ -39,12 +39,10 @@ def loadData(path):
     return df
 df=loadData('./select_job_id_job_experience_from_job2_0.tsv')
 df.columns = ['job_id', 'exp']
-# dfTest=df.head(10);
 dfTest=df
 try:
     for i in dfTest.index:
         l=filter(dfTest.loc[i].values[1])
-        # print(count,file=f)
         job_id=dfTest.loc[i].values[0]
         sql = "INSERT INTO job_five_factors(job_id,job_exp_low,job_exp_high,job_exp_average) VALUES ('%s','%s','%s','%s')"  %(job_id,l[0],l[1],l[2])
         cursor.execute(sql)

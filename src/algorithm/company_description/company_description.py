@@ -37,16 +37,13 @@ dfTest=df1
 jieba.load_userdict('./dict.txt')
 #载入停词表
 jieba.analyse.set_stop_words('./stopwords.txt')
-#print(type(dfTest))
 try:
     count=1
 
     for i in dfTest.index:
         chinese_keywords=jieba.analyse.textrank(dfTest.loc[i].values[1],withWeight=True, topK=30,allowPOS=('ns','n', 'vn'))
-        # print(count,file=f)
         company_name=dfTest.loc[i].values[0]
         for word in chinese_keywords:
-            # print('%s,%s'%(word[0],word[1]),file=f)
             sql = "INSERT INTO company_description_output(company_name,word,weight) VALUES ('%s','%s','%s')"  %(company_name,word[0],word[1]*5)
             cursor.execute(sql)
             db.commit()
