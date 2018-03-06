@@ -27,10 +27,10 @@ def form_dict():
     dict={}
     count=0
     # 连接数据库
-    db = pymysql.connect(host='47.100.163.219',
-                         user='root',
-                         password='Cloud12345',
-                         db='cloud',
+    db = pymysql.connect(host='***',
+                         user='***',
+                         password='***',
+                         db='***',
                          charset='utf8mb4')
     # 停词表
     #停词表
