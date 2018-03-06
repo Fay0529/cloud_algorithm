@@ -14,10 +14,10 @@
 import pymysql
 import re
 
-db=pymysql.connect(host='47.100.163.219',
-                    user='root',
-                    password='Cloud12345',
-                    db='cloud',
+db=pymysql.connect(host='***',
+                    user='***',
+                    password='***',
+                    db='***',
                     charset='utf8mb4')
 
 
