@@ -29,10 +29,10 @@ dict_4={}
 #word_id,weight
 dict_5={}
 
-db = pymysql.connect(host='localhost',
-                     user='root',
-                     password='qhd0027',
-                     db='cloud',
+db = pymysql.connect(host='***',
+                     user='***',
+                     password='***',
+                     db='***',
                      charset='utf8mb4')
 cursor = db.cursor()
 
