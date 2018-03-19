@@ -16,6 +16,17 @@ from pyspark.sql import SQLContext
 import math
 import pymysql
 
+'''
+职位向量：
+job_id 职位号,
+salary_mid 工资中值,
+company_nature 公司类型,
+education_degree 学历,
+job_exp 工作经验,
+lng 经度,
+lat 纬度,
+classification 职位分类
+'''
 class Job_vector:
     def __init__(self,job_id,salary_mid,company_nature,education_degree,job_exp,lng,lat,classification):
         self.job_id=job_id
@@ -27,7 +38,9 @@ class Job_vector:
         self.lat=lat
         self.classification=classification
 
-
+'''
+计算两条职位向量的相似度
+'''
 def sim(job_vector_1,job_vector_2):
     city_length=math.pow((job_vector_1.lng-job_vector_2.lng),2)+math.pow((job_vector_1.lat-job_vector_2.lat),2)
     sim_city=1-float(math.sqrt(city_length)/100)
@@ -50,7 +63,7 @@ if __name__ == '__main__':
     df = items.toDF(
         ['job_id', 'salary_mid', 'company_nature', 'education_degree', 'job_exp', 'lng', 'lat', 'classification'])
     db = pymysql.connect(host='***',
-                         user='***'
+                         user='***',
                          password='***',
                          db='cloud',
                          charset='utf8mb4')
@@ -79,8 +92,10 @@ if __name__ == '__main__':
                     classification = int(row_1[7])
                     job_vector_1 = Job_vector(job_id, salary_mid, company_nature, education_degree, job_exp, lng, lat,
                                               classification)
+                    #只选取与用户浏览职位相同职位分类的职位
                     df1 = df.filter(df.classification == classification).collect()
                     job_rdd = sc.parallelize(df1)
+                    #构造job_id,sim键值对
                     sim_rdd = job_rdd.map(lambda job_vector_2: (job_vector_2[0], sim(job_vector_1,
                                                                                      Job_vector(int(job_vector_2[0]),
                                                                                                 int(job_vector_2[1]),
@@ -90,12 +105,19 @@ if __name__ == '__main__':
                                                                                                 float(job_vector_2[5]),
                                                                                                 float(job_vector_2[6]),
                                                                                                 int(job_vector_2[7])))))
+                    #按照相似度sim降序排序，并去掉与用户浏览记录相同的那条job_vector
                     recommendations = sim_rdd.sortBy(lambda x: x[1], ascending=False).collect()[1:10]
                     for item in recommendations:
-                        print(item[0])
+                        sql_2="insert into user_recommendation(user_id,job_id) values(%s,%s) "%(user_id,item[0])
+                        try:
+                            cursor.execute(sql_2)
+                            db.commit()
+                        except Exception as err:
+                            print(err)
+                            print("err3")
             except Exception as err:
                 print(err)
-                print("err1")
+                print("err2")
     except Exception as err:
         print(err)
         print("err1")
