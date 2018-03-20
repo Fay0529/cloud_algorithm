@@ -6,9 +6,7 @@
 # Version 		: 	1.0
 
 """
-
 使用tfidf算法计算job_description中英文关键词的权重
-
 """
 
 import math

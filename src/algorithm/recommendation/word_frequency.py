@@ -6,9 +6,7 @@
 # Version 		: 	1.0
 
 """
-
 统计job_name词频
-
 """
 
 from pyspark import SparkConf, SparkContext

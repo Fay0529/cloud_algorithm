@@ -6,11 +6,8 @@
 # Version 		: 	1.0
 
 """
-
 对job_description进行分词、滤词
 使用textrank算法计算job_description中中文关键词的权重
-
-
 """
 
 import jieba

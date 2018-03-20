@@ -6,9 +6,7 @@
 # Version 		: 	1.0
 
 """
-
 使用FP-Gworth算法找出(地点，工资)频繁项集
-
 """
 
 from pyspark import SparkContext
